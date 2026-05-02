@@ -839,7 +839,7 @@
   <button class="nav-tab" onclick="showSection('eventos', this)">Eventos</button>
   <button class="nav-tab" onclick="showSection('oracao', this)">Oração</button>
   <button class="nav-tab" onclick="showSection('hinos', this)">Hinos</button>
-  <button class="nav-tab" onclick="showSection('contato', this)">Contato</button>
+  <button class="nav-tab" onclick="showSection('contato', this)">Sobre Nós</button>
 </div>
 
 <!-- ── SEÇÃO: CULTOS ── -->
@@ -965,153 +965,130 @@
   <div id="listaHinos"></div>
 </div>
 
-<!-- ── SEÇÃO: CONTATO ── -->
+<!-- ── SEÇÃO: SOBRE NÓS ── -->
 <div class="section" id="sec-contato">
-  <div class="section-title">Contato</div>
+  <div class="section-title">Sobre Nós</div>
   <div class="divider"></div>
 
-  <!-- Texto institucional -->
-  <div style="
-    background: var(--verde-escuro);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  ">
-    <div style="
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--dourado-claro);
-      margin-bottom: 12px;
-    ">✦ UMA IGREJA PROTESTANTE</div>
-
-    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--creme);line-height:1.7;margin-bottom:12px;">
-      A Igreja Presbiteriana de Guararema é uma comunidade cristã protestante, herdeira da tradição Reformada.
-    </p>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--creme);line-height:1.7;margin-bottom:12px;">
-      Isto significa que nossas origens remontam ao movimento da Reforma Protestante do séc. XVI, mais particularmente aquele movimento que foi liderado pelo teólogo francês João Calvino.
-    </p>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--creme);line-height:1.7;margin-bottom:14px;">
-      Estamos comprometidos com as cinco declarações clássicas do movimento protestante do séc. XVI.
-    </p>
-    <div style="
-      border-top: 1px solid rgba(232,201,122,0.3);
-      padding-top: 12px;
-      font-family:'Cormorant Garamond',serif;
-      font-size:15px;
-      font-style:italic;
-      color: var(--dourado-claro);
-      line-height: 1.8;
-      text-align: center;
-    ">
-      Somente a Escritura · Somente a Fé<br>
-      Somente a Graça · Somente Cristo<br>
-      Somente a Deus seja dada a Glória
-    </div>
+  <!-- Quem Somos -->
+  <div style="background:var(--branco);border-radius:12px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid var(--verde-claro);">
+    <div style="font-family:var(--fonte-titulo);font-size:16px;font-weight:700;color:var(--verde-escuro);margin-bottom:12px;">⛪ Quem Somos</div>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;margin-bottom:10px;">A Igreja Presbiteriana de Guararema é uma comunidade cristã protestante, firmada na Palavra de Deus e comprometida com a pregação fiel do evangelho, o discipulado e a glória de Cristo.</p>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;margin-bottom:10px;">Buscamos viver a fé com seriedade, amor e comunhão, servindo a Deus e cuidando de pessoas com fidelidade às Sagradas Escrituras.</p>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;">Pertencemos à Federação das Igrejas Presbiterianas do Brasil e, atualmente, estamos debaixo da tutela da Igreja Presbiteriana da Mooca, caminhando em unidade pastoral e compromisso com a tradição reformada e presbiteriana.</p>
   </div>
 
-  <div class="contato-item" onclick="abrirNavegacao()">
-    <div class="contato-icone">📍</div>
-    <div class="contato-info">
-      <div class="contato-label">Endereço</div>
-      <div class="contato-valor">Rua Adhemar de Barros, 665</div>
-    </div>
-    <div class="contato-seta">›</div>
+  <!-- De Onde Viemos -->
+  <div style="background:var(--branco);border-radius:12px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid var(--dourado);">
+    <div style="font-family:var(--fonte-titulo);font-size:16px;font-weight:700;color:var(--verde-escuro);margin-bottom:12px;">📖 De Onde Viemos</div>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;margin-bottom:10px;">Nossa história está ligada à tradição da Reforma Protestante do século XVI, um movimento que chamou a Igreja de volta à centralidade da Bíblia, da graça e de Cristo.</p>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;margin-bottom:10px;">Entre os principais nomes desse movimento está João Calvino, que deu continuidade e profundidade à fé reformada em Genebra, consolidando uma teologia centrada na soberania de Deus e na autoridade das Escrituras.</p>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;margin-bottom:10px;">Essa tradição chegou à Escócia por meio de John Knox, fortalecendo o presbiterianismo e sua identidade bíblica e pastoral.</p>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;margin-bottom:10px;">No Brasil, essa herança foi trazida pelo missionário Ashbel Green Simonton, que chegou em 12 de agosto de 1859, dando início à Igreja Presbiteriana do Brasil.</p>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;">Somos, portanto, parte dessa história de fé, missão e compromisso com o evangelho.</p>
   </div>
 
-  <!-- Modal de navegação -->
-  <div id="nav-modal" onclick="if(event.target===this)fecharNav()" style="
-    display:none;
-    position:fixed;inset:0;z-index:999;
-    background:rgba(0,0,0,0.5);
-    align-items:flex-end;justify-content:center;
-  ">
-    <div style="
-      background:var(--branco);
-      width:100%;max-width:430px;
-      border-radius:20px 20px 0 0;
-      padding:24px 20px 40px;
-    ">
-      <div style="font-family:var(--fonte-titulo);font-size:16px;font-weight:700;color:var(--verde-escuro);margin-bottom:6px;">Como deseja navegar?</div>
-      <div style="font-size:13px;color:var(--texto-suave);margin-bottom:20px;">Rua Adhemar de Barros, 665 — Guararema, SP</div>
+  <!-- No Que Cremos -->
+  <div style="background:var(--verde-escuro);border-radius:12px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <div style="font-family:var(--fonte-titulo);font-size:16px;font-weight:700;color:var(--dourado-claro);margin-bottom:12px;">✝️ No Que Cremos</div>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--creme);line-height:1.75;margin-bottom:14px;">Nossa fé está firmada nas verdades centrais da Reforma Protestante, conhecidas como os cinco solas:</p>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;font-family:var(--fonte-texto);font-size:14px;color:var(--dourado-claro);"><strong>Sola Scriptura</strong> — Somente a Escritura</div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;font-family:var(--fonte-texto);font-size:14px;color:var(--dourado-claro);"><strong>Sola Gratia</strong> — Somente a Graça</div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;font-family:var(--fonte-texto);font-size:14px;color:var(--dourado-claro);"><strong>Sola Fide</strong> — Somente a Fé</div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;font-family:var(--fonte-texto);font-size:14px;color:var(--dourado-claro);"><strong>Solus Christus</strong> — Somente Cristo</div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;font-family:var(--fonte-texto);font-size:14px;color:var(--dourado-claro);"><strong>Soli Deo Gloria</strong> — Glória Somente a Deus</div>
+    </div>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--creme);line-height:1.75;">Cremos que a Bíblia é nossa única regra de fé e prática, que a salvação é pela graça mediante a fé em Cristo, e que toda a glória pertence somente a Deus.</p>
+  </div>
 
-      <div onclick="abrirMaps()" style="
-        display:flex;align-items:center;gap:14px;
-        background:var(--creme);border-radius:12px;
-        padding:14px 16px;margin-bottom:10px;cursor:pointer;
-        border:1.5px solid var(--creme-escuro);
-      ">
-        <span style="font-size:28px;">🗺️</span>
-        <div>
-          <div style="font-family:var(--fonte-titulo);font-size:15px;font-weight:700;color:var(--verde-escuro);">Google Maps</div>
-          <div style="font-size:12px;color:var(--texto-suave);">Abrir no Google Maps</div>
-        </div>
+  <!-- Base Doutrinária -->
+  <div style="background:var(--branco);border-radius:12px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid var(--verde-medio);">
+    <div style="font-family:var(--fonte-titulo);font-size:16px;font-weight:700;color:var(--verde-escuro);margin-bottom:12px;">📚 Nossa Base Doutrinária</div>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;margin-bottom:10px;">Também somos comprometidos com a Confissão de Fé de Westminster e seus catecismos, que expressam de forma fiel e bíblica a doutrina reformada que professamos.</p>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;">Ela nos ajuda a preservar a pureza do ensino cristão, a fidelidade à Palavra e a unidade da fé.</p>
+  </div>
+
+  <!-- Nossa Missão -->
+  <div style="background:var(--branco);border-radius:12px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid var(--dourado);">
+    <div style="font-family:var(--fonte-titulo);font-size:16px;font-weight:700;color:var(--verde-escuro);margin-bottom:12px;">❤️ Nossa Missão</div>
+    <p style="font-family:var(--fonte-texto);font-size:15px;color:var(--texto-suave);line-height:1.75;margin-bottom:10px;">Queremos ser uma igreja centrada em Cristo, conectada em comunhão, dedicada ao cuidado mútuo e comprometida com a transformação de vidas por meio do evangelho.</p>
+    <p style="font-family:var(--fonte-texto);font-size:15px;font-style:italic;color:var(--verde-escuro);line-height:1.75;font-weight:500;">Vivemos para glorificar a Deus, servir pessoas e anunciar a esperança de Cristo ao mundo.</p>
+  </div>
+
+  <!-- Contatos -->
+  <div style="margin-top:8px;">
+    <div style="font-family:var(--fonte-titulo);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--texto-suave);margin-bottom:12px;">✦ Fale Conosco</div>
+
+    <div class="contato-item" onclick="abrirNavegacao()">
+      <div class="contato-icone">📍</div>
+      <div class="contato-info">
+        <div class="contato-label">Endereço</div>
+        <div class="contato-valor">Rua Adhemar de Barros, 665</div>
       </div>
+      <div class="contato-seta">›</div>
+    </div>
 
-      <div onclick="abrirWaze()" style="
-        display:flex;align-items:center;gap:14px;
-        background:var(--creme);border-radius:12px;
-        padding:14px 16px;margin-bottom:16px;cursor:pointer;
-        border:1.5px solid var(--creme-escuro);
-      ">
-        <span style="font-size:28px;">🚗</span>
-        <div>
-          <div style="font-family:var(--fonte-titulo);font-size:15px;font-weight:700;color:var(--verde-escuro);">Waze</div>
-          <div style="font-size:12px;color:var(--texto-suave);">Abrir no Waze</div>
+    <!-- Modal de navegação -->
+    <div id="nav-modal" onclick="if(event.target===this)fecharNav()" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.5);align-items:flex-end;justify-content:center;">
+      <div style="background:var(--branco);width:100%;max-width:430px;border-radius:20px 20px 0 0;padding:24px 20px 40px;">
+        <div style="font-family:var(--fonte-titulo);font-size:16px;font-weight:700;color:var(--verde-escuro);margin-bottom:6px;">Como deseja navegar?</div>
+        <div style="font-size:13px;color:var(--texto-suave);margin-bottom:20px;">Rua Adhemar de Barros, 665 — Guararema, SP</div>
+        <div onclick="abrirMaps()" style="display:flex;align-items:center;gap:14px;background:var(--creme);border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;border:1.5px solid var(--creme-escuro);">
+          <span style="font-size:28px;">🗺️</span>
+          <div>
+            <div style="font-family:var(--fonte-titulo);font-size:15px;font-weight:700;color:var(--verde-escuro);">Google Maps</div>
+            <div style="font-size:12px;color:var(--texto-suave);">Abrir no Google Maps</div>
+          </div>
         </div>
+        <div onclick="abrirWaze()" style="display:flex;align-items:center;gap:14px;background:var(--creme);border-radius:12px;padding:14px 16px;margin-bottom:16px;cursor:pointer;border:1.5px solid var(--creme-escuro);">
+          <span style="font-size:28px;">🚗</span>
+          <div>
+            <div style="font-family:var(--fonte-titulo);font-size:15px;font-weight:700;color:var(--verde-escuro);">Waze</div>
+            <div style="font-size:12px;color:var(--texto-suave);">Abrir no Waze</div>
+          </div>
+        </div>
+        <button onclick="fecharNav()" style="width:100%;padding:13px;border:none;border-radius:10px;background:var(--creme-escuro);color:var(--texto-suave);font-family:var(--fonte-titulo);font-size:14px;font-weight:700;cursor:pointer;">Cancelar</button>
       </div>
+    </div>
 
-      <button onclick="fecharNav()" style="
-        width:100%;padding:13px;border:none;border-radius:10px;
-        background:var(--creme-escuro);color:var(--texto-suave);
-        font-family:var(--fonte-titulo);font-size:14px;font-weight:700;cursor:pointer;
-      ">Cancelar</button>
+    <div class="contato-item" onclick="window.open('mailto:renansouzamatheus@gmail.com','_blank')">
+      <div class="contato-icone">✉️</div>
+      <div class="contato-info">
+        <div class="contato-label">E-mail</div>
+        <div class="contato-valor">renansouzamatheus@gmail.com</div>
+      </div>
+      <div class="contato-seta">›</div>
+    </div>
+
+    <div class="contato-item" onclick="window.open('https://wa.me/5511982512750','_blank')">
+      <div class="contato-icone">💬</div>
+      <div class="contato-info">
+        <div class="contato-label">WhatsApp</div>
+        <div class="contato-valor">(11) 98251-2750</div>
+      </div>
+      <div class="contato-seta">›</div>
+    </div>
+
+    <div class="contato-item" onclick="window.open('https://instagram.com/ipguararema','_blank')">
+      <div class="contato-icone">📸</div>
+      <div class="contato-info">
+        <div class="contato-label">Instagram</div>
+        <div class="contato-valor">@ipguararema</div>
+      </div>
+      <div class="contato-seta">›</div>
+    </div>
+
+    <div class="contato-item" onclick="window.open('https://www.youtube.com/@IgrejaPresbiterianaFiladél-w5m','_blank')">
+      <div class="contato-icone">▶️</div>
+      <div class="contato-info">
+        <div class="contato-label">YouTube</div>
+        <div class="contato-valor">@IgrejaPresbiterianaFiladél</div>
+      </div>
+      <div class="contato-seta">›</div>
     </div>
   </div>
 
-  <div class="contato-item" onclick="window.open('mailto:renansouzamatheus@gmail.com','_blank')">
-    <div class="contato-icone">✉️</div>
-    <div class="contato-info">
-      <div class="contato-label">E-mail</div>
-      <div class="contato-valor">renansouzamatheus@gmail.com</div>
-    </div>
-    <div class="contato-seta">›</div>
-  </div>
-
-  <div class="contato-item" onclick="window.open('https://wa.me/5511982512750','_blank')">
-    <div class="contato-icone">💬</div>
-    <div class="contato-info">
-      <div class="contato-label">WhatsApp</div>
-      <div class="contato-valor">(11) 98251-2750</div>
-    </div>
-    <div class="contato-seta">›</div>
-  </div>
-
-  <div class="contato-item" onclick="window.open('https://instagram.com/ipguararema','_blank')">
-    <div class="contato-icone">📸</div>
-    <div class="contato-info">
-      <div class="contato-label">Instagram</div>
-      <div class="contato-valor">@ipguararema</div>
-    </div>
-    <div class="contato-seta">›</div>
-  </div>
-
-  <div class="contato-item" onclick="window.open('https://www.youtube.com/@IgrejaPresbiterianaFiladél-w5m','_blank')">
-    <div class="contato-icone">▶️</div>
-    <div class="contato-info">
-      <div class="contato-label">YouTube</div>
-      <div class="contato-valor">@IgrejaPresbiterianaFiladél</div>
-    </div>
-    <div class="contato-seta">›</div>
-  </div>
-
-  <div style="margin-top:20px; text-align:center;">
-    <div class="cruz-ornamento">✦ ✝ ✦</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--texto-suave);margin-top:8px;">"Bem-aventurado o povo que conhece o seu Deus."</p>
-    <p style="font-size:11px;color:var(--dourado);margin-top:4px;font-weight:700;">Daniel 11:32</p>
-  </div>
 </div>
 
 <!-- BOTTOM NAV -->
@@ -1134,7 +1111,7 @@
   </button>
   <button class="bottom-btn" onclick="showSection('contato',null,this)">
     <span class="icon">📍</span>
-    <span class="label">Contato</span>
+    <span class="label">Sobre Nós</span>
   </button>
 </div>
 
