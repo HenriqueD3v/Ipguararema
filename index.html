@@ -912,14 +912,14 @@
     <div class="card-icon">👨‍👦</div>
     <div class="card-tag escuro">Reunião</div>
     <div class="card-titulo">Reunião Boaz</div>
-    <div class="card-detalhe">📖 Leitura do livro: <strong>Homens de Oração</strong><br>🕒 Horário: 16h00<br>📍 Local: Igreja</div>
+    <div class="card-detalhe">📖 Leitura do livro: <strong>Homens de Oração</strong><br>📅 Data: 16/05<br>🕒 Horário: 16h00<br>📍 Local: Igreja</div>
   </div>
 
   <div class="card destaque">
     <div class="card-icon">👩‍👧</div>
     <div class="card-tag escuro">Reunião</div>
     <div class="card-titulo">Reunião Marias e Martas</div>
-    <div class="card-detalhe">📖 Leitura do livro: <strong>Unidas Contra a Rivalidade Feminina</strong><br>🕒 Horário: 16h00<br>📍 Local: Igreja</div>
+    <div class="card-detalhe">📖 Leitura do livro: <strong>Unidas Contra a Rivalidade Feminina</strong><br>📅 Data: 16/05<br>🕒 Horário: 16h00<br>📍 Local: Igreja</div>
   </div>
 
 </div>
@@ -1533,25 +1533,181 @@
   // ── LETRAS DOS HINOS ──
   const letras = {
 
-    '001': `Justo é o Senhor em seus santos caminhos,\nFiel em suas obras, verdade e amor;\nA todos que o invocam concede seus dons,\nBenigno em todas as suas obras.\n\nLouvai ao Senhor! Louvai ao Senhor!\nLouvai ao Senhor!`,
+    '001': `Justo é o Senhor em seus santos caminhos,
+Benigno em todas as suas obras. (bis)
+Perto está o Senhor,
+Perto está dos que o invocam,
+De todos que o invocam
+Em verdade. Aleluia! Aleluia!`,
 
-    '002': `Revelai-vos, Senhor, ao coração;\nEnche-nos do teu Santo Espírito;\nRevela o teu amor e salvação,\nE santifica todo o nosso ser.\n\nÉ hora de adorar, é hora de orar,\nDe buscar o Senhor com fervor;\nSantifica, Senhor, nosso culto e louvor,\nE recebe nossa adoração.`,
+    '002': `O Senhor está no seu santo templo,
+O Senhor está no seu santo templo!
+Cale-se diante dele toda terra,
+Cale-se diante dele toda terra!`,
 
-    '003': `A Igreja está reunida para adorar ao Senhor,\nEm espírito e em verdade a oferecer louvor;\nEm nome de Jesus nos apresentamos aqui,\nPai, Filho e Espírito Santo, estamos diante de Ti.\n\nSanto, Santo, Santo! O Senhor Deus Todo-Poderoso!\nSanto, Santo, Santo! Digno és de receber louvor!`,
+    '003': `Eterno Pai teu povo congregado,
+Humilde entoa o teu louvor aqui!
+No dia para o culto reservado,
+Com esperança olhamos para ti.
+Teu santo livro ó grande Deus, tomamos
+Com fé singela e reverente amor,
+E, como atentos filhos procuramos
+Ciência na palavra do Senhor.
 
-    '004': `Ó Trindade bendita, louvamos ao Senhor,\nAo Pai que nos criou com seu imenso amor;\nAo Filho que morreu por nós no Calvário,\nAo Espírito Santo, nosso guia e defensor.\n\nGlória ao Pai! Glória ao Filho!\nGlória ao Espírito Santo também!\nGlória ao Pai! Glória ao Filho!\nGlória à Trindade que sempre sustém!`,
+Jesus! Aos teus benditos pés sentados
+Queremos teu conselho receber,
+E sendo por ti mesmo doutrinados,
+De mais em mais na santa fé crescer.
+Do mundo e seus encargos retirados
+Queremos descansar em ti, Senhor,
+Mirando os ricos bens entesourados
+Na plenitude do teu vasto amor.
 
-    '005': `Louvemos a Trindade adorada,\nPai, Filho e Espírito de amor;\nSua graça infinita, sua glória sagrada,\nÉ digna de todo o louvor.\n\nSanto és Tu, Senhor! Santo és Tu!\nSanto és Tu, Deus Trino e Um!\nSanto és Tu, Senhor! Santo és Tu!\nSanto és Tu para sempre!`,
+Ensina aos teus, Espírito divino,
+Dissipa as trevas desses corações
+E com a luz do teu celeste ensino,
+Vem aclarar as santas instruções.
+Aviva em nós as forças da memória,
+Pois sempre mais queremos conhecer
+O Rei dos céus, o Cristo cuja a glória
+Enleva os santos anjos de prazer. Amém.`,
 
-    '006': `Glória ao Pai, ao Filho e ao Espírito Santo,\nComo era no princípio, agora e sempre,\nPor todos os séculos dos séculos. Amém.`,
+    '004': `Deus está no templo!
+Pai Onipotente!
+A seus pés nos humilhamos.
+Servos consagrados,
+Reverentemente,
+Ao Deus santo adoramos.
+Por favor, com amor,
+Espiritualmente
+Deus está no templo!
 
-    '007': `Glória ao Pai eterno, glória ao Filho amado,\nGlória ao Santo Espírito, Deus Trino e Um;\nGlória na mais alta glória ao Senhor louvado,\nGlória e louvor a Ele, que sempre vem.\n\nGlória! Glória! Glória a Deus nas alturas!\nGlória! Glória! Paz aos homens na terra!\nGlória! Glória! Glória a Deus nas alturas!\nGlória e paz por toda a eternidade!`,
+Cristo está no templo!
+Sumo benefício
+Por seu sangue nos foi dado.
+Ele, o bom Cordeiro,
+Foi o sacrifício
+Que expiou o vil pecado.
+Escolheu e sofreu
+O cabal suplício;
+Cristo está no templo!
 
-    '008': `Ó bendita Trindade, a Ti adoramos,\nPai, Filho e Espírito Santo, a Ti louvamos;\nTua graça e tua glória proclamamos,\nA Ti, Senhor, nosso louvor ofertamos.\n\nAleluia! Aleluia! Glória a Deus!\nAleluia! Aleluia! Glória a Deus!\nAleluia! Aleluia! Glória a Deus!\nPor toda a eternidade!`,
+Tu, que estás no templo,
+Preceptor divino,
+E os corações habitas;
+Tu, paciente Mestre,
+Dá-nos teu ensino,
+Aclarando as leis benditas.
+Que prazer conhecer
+A graça infinita!
+Sim, está no templo!`,
 
-    '009': `Aleluia! Aleluia! Ao Deus Trino louvemos,\nAleluia! Aleluia! Com fervor cantemos;\nPai criador, Filho redentor,\nEspírito santificador, louvemos ao Senhor!\n\nAleluia! Aleluia! Aleluia!\nAleluia! Aleluia! Aleluia!\nAleluia! Aleluia! Aleluia!\nAo Senhor Deus Todo-Poderoso!`,
+    '005': `Glória seja ao Pai,
+Ao Filho e ao Santo Espírito,
+Como era no princípio,
+É hoje e para sempre,
+Eternamente! Amém! Amém!`,
 
-    '010': `Os céus e a terra proclamam a glória do Criador,\nO sol e as estrelas cantam ao Senhor;\nAs montanhas e os vales louvam ao Deus de amor,\nToda a criação adora ao Criador.\n\nLouvor! Louvor! A toda criatura que respira!\nLouvor! Louvor! Ao Senhor que tudo criou!\nLouvor! Louvor! A criação ao Criador aspira!\nLouvor! Louvor! A glória toda é do Senhor!`,
+    '006': `A Deus, supremo Benfeitor,
+Anjos e homens dêem louvor;
+A Deus o Filho, a Deus o Pai,
+E a Deus Espírito, glória dai. Amém.`,
+
+    '007': `A ti, meu Criador,
+Dos altos céus Senhor,
+Eu quero honrar.
+Aceita a adoração
+Que a voz e o coração
+Te vêm, bondoso Pai,
+Aqui prestar.
+
+A ti, Emanuel,
+Por teu amor fiel
+Rendo eu louvor.
+Do céu trouxeste a luz,
+Por mim sofreste a cruz,
+Bendito sejas, pois,
+Meu Redentor.
+
+A ti, Consolador,
+Divino Preceptor,
+Eu louvarei.
+Com teu poder sem par,
+Oh, vem me iluminar,
+E assim, ao teu fulgor,
+Eu brilharei. Amém.`,
+
+    '008': `Grande Deus, o teu louvor
+Hoje, unidos, entoamos;
+Teu excelso e doce amor
+Com os anjos celebramos.
+E em adoração a ti,
+Vimos bendizer-te aqui.
+
+Cristo, Salvador veraz,
+Com poder em nós domina!
+Tua graça e tua paz,
+Ó Senhor, ao mundo ensina.
+Redimido, em tua luz
+Vem fazê-lo andar, Jesus!
+
+Santo Espírito eternal,
+Oh, dirige as nossas mentes
+Para, em comunhão real,
+Te buscarmos reverentes;
+E o nosso coração
+Se encherá de gratidão.
+
+Ó Deus Trino, pois a ti
+Sejam, sem cessar, rendidas
+Pelos filhos teus aqui,
+Honra e glória sem medida.
+Infinito é o teu amor!
+Cantem todos teu louvor! Amém.`,
+
+    '009': `A ti, ó Deus, Altíssimo Senhor,
+Eterno Pai, supremo Benfeitor,
+Teus filhos vêm, alegres, dar louvor.
+Aleluia! Aleluia!
+
+A ti, Deus Filho, Salvador Jesus,
+Da graça a fonte, da verdade a luz,
+Por teu amor mostrado sobre a cruz,
+Aleluia! Aleluia!
+
+A ti, ó Deus, Espírito de amor,
+De nossas almas santificador.
+Mestre divino, bom Consolador,
+Aleluia! Aleluia!
+
+Ó Deus Triúno, vem-nos conceder
+A plenitude do real poder,
+E as nossas almas vem, aqui, reger.
+Aleluia! Aleluia! Amém.`,
+
+    '010': `Vós criaturas de Deus Pai,
+Todos erguei a voz, cantai!
+Oh, louvai-o! Aleluia!
+Tu sol dourado a refulgir,
+Tu, lua em prata a reluzir,
+Oh, louvai-o! Oh, louvai-o!
+Aleluia! Aleluia! Aleluia!
+
+Oh, boa terra que nos dás
+Infindas bênçãos, canta já!
+Oh, louvai-o! Aleluia!
+Frutos e flores, juntos dai
+A glória a Deus, Senhor e Pai.
+Oh, louvai-o! Oh, louvai-o!
+Aleluia! Aleluia! Aleluia!
+
+Vós, homens sábios e de bem,
+A todos proclamai também!
+Oh, louvai-o! Aleluia!
+Louvor ao Filho, glória ao Pai,
+E ao Santo Espírito louvai!
+Oh, louvai-o! Oh, louvai-o!
+Aleluia! Aleluia! Aleluia!`,
 
     '011': `Ó Trindade Santíssima, louvamos teu poder,\nPai eterno e glorioso, a Ti queremos ter;\nÓ Cristo redentor, que nos vieste salvar,\nÓ Espírito Santo, vem nos santificar.\n\nSanto! Santo! Santo! Senhor Deus Todo-Poderoso!\nSanto! Santo! Santo! O universo Te louva, Senhor!\nSanto! Santo! Santo! Misericordioso e glorioso!\nSanto! Santo! Santo! Trindade de amor!`,
 
@@ -1593,7 +1749,10 @@
 
     '030': `A providência de Deus na criação,\nEm tudo que existe vejo seu amor;\nNo sol e na chuva, na terra e no mar,\nSua graça sustenta todo o criado.\n\nProvidente Deus! Em Ti confiamos!\nProvidente Deus! A Ti louvamos!\nProvidente Deus! Tua mão nos guia!\nProvidente Deus! Tua graça nos envia!`,
 
-    '006': `Glória ao Pai, ao Filho e ao Espírito Santo,\nComo era no princípio, agora e sempre,\nPor todos os séculos dos séculos. Amém.`,
+    '006': `A Deus, supremo Benfeitor,
+Anjos e homens dêem louvor;
+A Deus o Filho, a Deus o Pai,
+E a Deus Espírito, glória dai. Amém.`,
 
     '016': `Louvai ao Senhor, ao poderoso Rei da glória;\nLouvai-o, ó alma minha, com fervor e amor!\nVinde todos nós louvar-lhe a imensa glória,\nCantar de sua graça o jubiloso chor.\nLouvai ao Senhor!\n\nLouvai ao Senhor! Tão grande é seu poder e amor!\nCom júbilo e prazer cantemos ao Senhor!\nLouvai ao Senhor, louvai ao Senhor!`,
 
