@@ -1012,13 +1012,63 @@
     </div>
   </div>
 
-  <div class="contato-item" onclick="window.open('https://maps.google.com/?q=Rua+Adhemar+de+Barros+665+Guararema+SP','_blank')">
+  <div class="contato-item" onclick="abrirNavegacao()">
     <div class="contato-icone">📍</div>
     <div class="contato-info">
       <div class="contato-label">Endereço</div>
       <div class="contato-valor">Rua Adhemar de Barros, 665</div>
     </div>
     <div class="contato-seta">›</div>
+  </div>
+
+  <!-- Modal de navegação -->
+  <div id="nav-modal" onclick="if(event.target===this)fecharNav()" style="
+    display:none;
+    position:fixed;inset:0;z-index:999;
+    background:rgba(0,0,0,0.5);
+    align-items:flex-end;justify-content:center;
+  ">
+    <div style="
+      background:var(--branco);
+      width:100%;max-width:430px;
+      border-radius:20px 20px 0 0;
+      padding:24px 20px 40px;
+    ">
+      <div style="font-family:var(--fonte-titulo);font-size:16px;font-weight:700;color:var(--verde-escuro);margin-bottom:6px;">Como deseja navegar?</div>
+      <div style="font-size:13px;color:var(--texto-suave);margin-bottom:20px;">Rua Adhemar de Barros, 665 — Guararema, SP</div>
+
+      <div onclick="abrirMaps()" style="
+        display:flex;align-items:center;gap:14px;
+        background:var(--creme);border-radius:12px;
+        padding:14px 16px;margin-bottom:10px;cursor:pointer;
+        border:1.5px solid var(--creme-escuro);
+      ">
+        <span style="font-size:28px;">🗺️</span>
+        <div>
+          <div style="font-family:var(--fonte-titulo);font-size:15px;font-weight:700;color:var(--verde-escuro);">Google Maps</div>
+          <div style="font-size:12px;color:var(--texto-suave);">Abrir no Google Maps</div>
+        </div>
+      </div>
+
+      <div onclick="abrirWaze()" style="
+        display:flex;align-items:center;gap:14px;
+        background:var(--creme);border-radius:12px;
+        padding:14px 16px;margin-bottom:16px;cursor:pointer;
+        border:1.5px solid var(--creme-escuro);
+      ">
+        <span style="font-size:28px;">🚗</span>
+        <div>
+          <div style="font-family:var(--fonte-titulo);font-size:15px;font-weight:700;color:var(--verde-escuro);">Waze</div>
+          <div style="font-size:12px;color:var(--texto-suave);">Abrir no Waze</div>
+        </div>
+      </div>
+
+      <button onclick="fecharNav()" style="
+        width:100%;padding:13px;border:none;border-radius:10px;
+        background:var(--creme-escuro);color:var(--texto-suave);
+        font-family:var(--fonte-titulo);font-size:14px;font-weight:700;cursor:pointer;
+      ">Cancelar</button>
+    </div>
   </div>
 
   <div class="contato-item" onclick="window.open('mailto:renansouzamatheus@gmail.com','_blank')">
@@ -1089,6 +1139,27 @@
 </div>
 
 <script>
+  function abrirNavegacao() {
+    const modal = document.getElementById('nav-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function fecharNav() {
+    document.getElementById('nav-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function abrirMaps() {
+    fecharNav();
+    window.open('https://maps.google.com/?q=Rua+Adhemar+de+Barros+665+Guararema+SP', '_blank');
+  }
+
+  function abrirWaze() {
+    fecharNav();
+    window.open('https://waze.com/ul?q=Rua+Adhemar+de+Barros+665+Guararema+SP&navigate=yes', '_blank');
+  }
+
   function irParaEventos() {
     const tab = document.querySelectorAll('.nav-tab')[1];
     const btn = document.querySelectorAll('.bottom-btn')[1];
