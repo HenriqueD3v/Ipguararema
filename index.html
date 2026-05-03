@@ -777,30 +777,63 @@
   }
   .hino-modal-header {
     background: var(--verde-escuro);
-    padding: 16px 20px;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .hino-header-row1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-shrink: 0;
+    gap: 8px;
   }
   .hino-modal-titulo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
     font-weight: 700;
     color: var(--dourado-claro);
     flex: 1;
-    padding-right: 10px;
+    line-height: 1.3;
   }
   .hino-modal-fechar {
     background: rgba(255,255,255,0.15);
     border: none;
     color: var(--creme);
-    font-size: 20px;
-    width: 34px;
-    height: 34px;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     cursor: pointer;
     flex-shrink: 0;
+    font-family: var(--fonte-texto);
+  }
+  .hino-font-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hino-font-btn {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: var(--creme);
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px 14px;
+    font-family: var(--fonte-titulo);
+    font-size: 15px;
+    transition: background 0.2s;
+  }
+  .hino-font-btn:active { background: rgba(255,255,255,0.3); }
+  .hino-font-label {
+    font-size: 11px;
+    color: var(--dourado-claro);
+    font-family: var(--fonte-texto);
+    flex: 1;
+    text-align: center;
+    letter-spacing: 0.5px;
   }
   .hino-iframe { flex: 1; border: none; width: 100%; background: var(--creme); }
 </style>
@@ -1709,56 +1742,433 @@ E ao Santo Espírito louvai!
 Oh, louvai-o! Oh, louvai-o!
 Aleluia! Aleluia! Aleluia!`,
 
-    '011': `Ó Trindade Santíssima, louvamos teu poder,\nPai eterno e glorioso, a Ti queremos ter;\nÓ Cristo redentor, que nos vieste salvar,\nÓ Espírito Santo, vem nos santificar.\n\nSanto! Santo! Santo! Senhor Deus Todo-Poderoso!\nSanto! Santo! Santo! O universo Te louva, Senhor!\nSanto! Santo! Santo! Misericordioso e glorioso!\nSanto! Santo! Santo! Trindade de amor!`,
+    '011': `Santo! Santo! Santo! Deus Onipotente!
+Louvam nossas vozes teu nome com fervor!
+Santo! Santo! Santo! Justo e compassivo!
+És Deus Triúno, Excelso Criador!
+Santo! Santo! Santo! Nós os pecadores,
+Não podemos ver tua glória sem temor.
+Tu somente és Santo! Só tu és perfeito,
+Deus Soberano, imenso em teu amor.
+Santo! Santo! Santo! Todos os remidos,
+Juntos com os anjos, proclamam teu louvor!
+Antes de formar-se o firmamento e a terra
+Eras, e sempre és, e hás de ser, Senhor!
+Santo! Santo! Santo! Deus Onipotente!
+Tuas obras louvam teu nome com fervor.
+Santo! Santo! Santo! Justo e compassivo!
+Deus Soberano, Excelso Criador! Amém`,
 
-    '012': `Glória a Deus nas alturas,\nE paz na terra aos homens de boa vontade;\nLouvamos a Ti, abençoamos a Ti,\nAdoramos a Ti, glorificamos a Ti.\n\nGraças Te damos por tua grande glória,\nSenhor Deus, Rei do céu, Pai Todo-Poderoso;\nSenhor, Filho Unigênito, Jesus Cristo;\nSenhor Deus, Cordeiro de Deus, Filho do Pai.`,
+    '012': `Santo! Santo! Santo!
+Deus dos Exércitos,
+A terra e os céus
+Proclamam tua glória.
+Glória a ti, glória a ti, ó Deus,
+Eternamente. Amém.`,
 
-    '013': `Quando contemplo o admirável Criador,\nO seu poder, amor e majestade;\nMinha alma se prostra diante do Senhor,\nEm adoração à sua santidade.\n\nMeu Deus, que grande és Tu!\nQue grande és Tu, Senhor!\nMeu Deus, que grande és Tu!\nQue grande és Tu!`,
+    '013': `Se nos cega o sol ardente
+Quando visto em seu fulgor,
+Quem contemplará Aquele
+Que do sol é Criador?
+Patriarcas não puderam
+O seu rosto contemplar,
+Nem Adão chegou a vê-lo
+Antes mesmo de pecar!
+Luz perante a qual é trevas
+Mesmo o sol a fulgurar!
+Nossos olhos pecadores
+Não te podem contemplar!
+Fogo em cima da arca santa,
+Sarça ardente do Sinai
+São figuras desta glória
+Do Senhor e Eterno Pai.
+Para termos nós com ele
+Franca e doce comunhão,
+Cristo, o Filho fez-se carne,
+Fez-se nossa Redenção!
+Para que na glória eterna
+O vejamos já sem véu,
+Cristo padeceu a morte,
+O caminho abrindo ao céu.`,
 
-    '014': `Louvor ao Senhor que é digno de louvor,\nLouvor ao Senhor que é grande em seu amor;\nLouvor ao Senhor! Aleluia cantemos,\nLouvor ao Senhor! Em júbilo marchemos.\n\nLouvor! Louvor! Ao Senhor!\nLouvor! Louvor! Ao Senhor!\nLouvor! Louvor! Ao Senhor!\nAleluia! Louvor ao Senhor!`,
+    '014': `Vamos nós louvar a Deus,
+Vamos! Vamos!
+Ao Senhor de toda a luz,
+Santo! Santo!
+Cantem louvem lá nos céus
+Nosso Deus e Rei Jesus!
+Exaltado seja Deus,
+Santo! Santo!
+Exaltado seja nosso Deus e Pai!
+Exaltado! Para sempre o exaltai!
+Cantem, louvem lá nos céus
+Nosso Deus e Rei Jesus!
+Exaltado seja Deus,
+Santo! Santo!
+Nosso Deus, eterno Pai,
+Santo! Santo!
+Deu-nos bênçãos por Jesus,
+Vede! Vede!
+Ao Senhor glorificai,
+Vós, os salvos pela cruz,
+Sim, conosco glória dai,
+Vinde! Vinde!
+Exaltemos nosso Deus,
+Santo! Santo!
+Exaltemos com fervor,
+Hoje! Hoje!
+Tributemos, todos nós,
+Hinos santos de louvor,
+Sim, louvor em alta voz,
+Hoje! Hoje!`,
 
-    '015': `Glória ao Pai, ao Filho e ao Espírito Santo!\nComo era no princípio, agora e sempre!\nPor todos os séculos dos séculos. Amém!\n\nGlória! Glória! Glória! Amém!\nGlória! Glória! Glória! Amém!`,
+    '015': `Tua, ó Deus, é toda a grandeza
+E o poder e a glória e a vitória
+E os louvores; vitória e louvores!
+Tua, ó Deus, tua, ó Deus, é a grandeza
+E o poder, a grandeza e o poder
+E a glória e a vitória e os louvores eternos.
+Pois tudo o que está no mar,
+E está no céu e na terra é teu!
+Teu é o domínio, teu é o domínio,
+Ó Senhor! E Tu és acima de todos os reis,
+De todos os reis. Amém. Amém. Aleluia!`,
 
-    '016': `Louvai ao Senhor, ao poderoso Rei da glória;\nLouvai-o, ó alma minha, com fervor e amor!\nVinde todos nós louvar-lhe a imensa glória,\nCantar de sua graça o jubiloso chor.\n\nLouvai ao Senhor! Tão grande é seu poder e amor!\nCom júbilo e prazer cantemos ao Senhor!\nLouvai ao Senhor, louvai ao Senhor!`,
+    '016': `Louvai a Deus,
+Soberano Senhor do que é feito.
+Louvai-o sim,
+De vossa alma, tesouro perfeito!
+A Deus cantai
+E, com fervor, tributai
+Profundo amor e respeito.
+Louvai a Deus
+Que vos faz prosperar dia a dia;
+E, com amor,
+Vos defende e abençoa a porfia.
+Lembrai também,
+Que o poderoso vos vem
+Fazer feliz companhia.`,
 
-    '017': `Deus seja louvado! A Ele cantemos,\nDeus seja louvado! A Ele servimos;\nDeus seja louvado! A Ele adoramos,\nDeus seja louvado! A Ele exaltamos.\n\nAleluia! Deus seja louvado!\nAleluia! A Ele toda glória!\nAleluia! Deus seja louvado!\nAleluia! Cantemos a vitória!`,
+    '017': `Seja louvado o Deus supremo,
+Deus revelado em Israel!
+Onipotente, prodígios obra,
+Sempre clemente, sempre fiel.
+Seja louvado o Deus supremo,
+Deus revelado em Israel!
+Louvor perene só Deus merece!
+Cantai, não cesse o seu louvor!
+De todos seja sempre exaltado,
+E cante a Igreja com terno amor.`,
 
-    '018': `Deus dos antigos patriarcas e profetas,\nDeus de Abraão, de Isaque e Jacó;\nDeus que és eterno, digno de louvores,\nTua glória cantamos com fervor.\n\nDeus dos antigos! Deus de hoje e sempre!\nDeus que és eterno! Imutável és Tu!\nDeus dos antigos! Deus de hoje e sempre!\nNosso Deus, nosso Rei, nosso luz!`,
+    '018': `Deus dos antigos, cuja forte mão
+Rege e sustém os astros na amplidão!
+Ó Soberano, excelso Criador,
+Com gratidão cantamos teu louvor!
+Desde o passado foste nossa luz,
+Sol que até hoje com fulgor reluz!
+Sê nosso Esteio, Guia e Proteção,
+Tua Palavra, lei e direção.
+Da guerra atroz, do crime e assolação,
+Dos tempos maus de um mundo em confusão,
+Seja o teu braço o nosso defensor,
+Pois confiamos sempre em ti Senhor!
+Teu povo, ó Deus, assiste em seu labor,
+No testemunho do teu grande amor,
+As nossas vidas vem fortalecer
+Para o teu nome sempre engrandecer. Amém`,
 
-    '019': `Rei sublime, Jesus Cristo,\nSenhor de toda a criação;\nA Ti, Rei eterno e infinito,\nOfertamos nossa adoração.\n\nRei sublime! Rei de glória!\nRei de todo o universo!\nRei sublime! Rei de glória!\nRei supremo e poderoso!`,
+    '019': `Ó Rei sublime em majestade e glória,
+Sobre as milícias do celeste além,
+Ouve o louvor, os hinos de vitória,
+Dos que de ti recebem todo bem!
+Vinde, ó remidos, filhos de Deus!
+Cantai louvores que alcancem os céus!
+Nos altos céus louvor a Deus ressoam,
+De gratidão ao soberano amor!
+Os redimidos com fervor entoam
+O nome excelso de seu Benfeitor.
+Eterno Deus, teus filhos vês prostrados
+Perante o brilho da superna luz,
+Pois do pecado foram resgatados,
+E agora rendem glórias a Jesus!`,
 
-    '020': `Glorifiquemos à Santa Trindade,\nPai, Filho e Espírito de santidade;\nCom cânticos de louvor e adoração,\nProstrados diante de Deus em oração.\n\nGlória! Glória! À Santa Trindade!\nGlória! Glória! Ao Deus de toda a verdade!\nGlória! Glória! À Santa Trindade!\nGlória e louvor por toda a eternidade!`,
+    '020': `A ti, ó Deus louvamos,
+E por nosso Senhor te confessamos!
+A ti, ó Pai da Eternidade, adora toda a terra;
+A ti, o coro angélico, a ti, todo o poder do céu,
+A ti, querubins e serafins proclamam sem cessar:
+"Santo! Santo! Santo! Senhor Deus dos Exércitos!
+Os céus e a terra estão cheios da majestade da sua glória!"
+A ti, o glorioso coro apostólico louva;
+A ti, a congregação dos profetas louva;
+A ti, o nobre exército dos mártires louva;
+A santa Igreja reconhece por toda a terra a ti:
+Ao Deus Pai, infinito Dominador!
+E ao teu venerável, vero e único Filho,
+E ao Santo Espírito, Consolador.
+Tu és Rei da glória, ó Jesus!
+Tu és o sempiterno Filho de Deus!
+Senhor, guarda o povo e abençoa-nos.
+Reina e guarda-nos para sempre.
+Noite e dia te adoramos
+E glorificamos teu nome sem par.
+Senhor! Em ti, em ti eu espero;
+Nunca eu seja confundido. Amém.`,
 
-    '021': `Deus de Abraão, de Isaque e de Jacó,\nDeus de todos os tempos e nações;\nA Ti cantamos, pois és único e só,\nO Deus eterno das gerações.\n\nDeus de Abraão! A Ti louvamos!\nDeus de Isaque! A Ti servimos!\nDeus de Jacó! A Ti adoramos!\nDeus eterno! Em Ti confiamos!`,
+    '021': `Ao Deus de Abraão louvai, do vasto céu Senhor,
+Eterno e poderoso Pai e Deus de amor!
+Augusto Jeová que terra e céu criou,
+Minha alma o Nome exaltará do grande EU-SOU.
+Ao Deus de Abraão louvai! Eis por mandado seu,
+Minha alma deixa a terra e vai gozar no céu.
+O mundo desprezei, seu lucro e seu louvor,
+E Deus por meu quinhão tomei e protetor.
+Meu Guia Deus será! Seu infinito amor
+Feliz em tudo me fará por onde eu for.
+Tomou-me pela mão, nas trevas deu-me luz,
+E dá-me eterna salvação por meu Jesus.
+Meu Deus por si jurou, eu nele confiei!
+E para o céu que preparou eu subirei.
+Sua face eu hei de ver, confiado em seu amor,
+E para sempre engrandecer meu Redentor.`,
 
-    '022': `Os céus proclamam a glória de Deus,\nO firmamento anuncia seu poder;\nO dia ao dia comunica seu valor,\nA noite revela ao mundo o seu saber.\n\nGlória! Glória! Os céus proclamam!\nGlória! Glória! Ao Deus Criador!\nGlória! Glória! Os céus proclamam!\nA glória eterna do nosso Senhor!`,
+    '022': `Altamente os céus proclamam
+Seu divino Criador!
+Anunciam o firmamento
+Tuas obras ó Senhor!
+Incessantes, noite e dia,
+Dão sinais do teu poder,
+Sem palavras, proclamando
+Deus excelso no saber!
+Majestoso o sol caminha
+Pelos céus, com resplendor!
+Exultando, em seu percurso,
+Enche o mundo de calor.
+Todo o vasto universo
+Canta, em coro, teu louvor!
+E a nós vem doce ensino
+Da Palavra do Senhor.
+Tua Lei, quão preciosa! Brilha mais que a clara luz;
+Esclarece as nossas mentes,
+Guia as almas a Jesus.
+Em tua graça meditando,
+Cantarei, ó bom Senhor,
+E será na minha boca
+Agradável o teu louvor. Amém.`,
 
-    '023': `Adoremos ao Criador, ao Senhor de toda a vida,\nQue nos fez à sua imagem, que nos ama sem medida;\nSua obra é maravilhosa, sua graça é infinita,\nA Ele toda glória, honra e louvor se apresenta.\n\nAdoremos! Adoremos ao Criador!\nAdoremos! Adoremos ao Senhor!\nAdoremos! Adoremos ao Criador!\nCom todo o coração!`,
+    '023': `Oh! Vinde adorar ao Deus criador,
+Da terra e dos céus eterno Senhor,
+Ao Deus que, habitando no meio da luz,
+A nós se revela por Cristo Jesus.
+Seu grande poder deveis contemplar
+No céu estrelado, no amplo mar.
+A gota de orvalho, a mínima flor,
+Proclamam, constantes, ser Deus seu Autor.
+Oh! Vinde adorar ao Deus Salvador,
+Que em Cristo Jesus nos mostra favor.
+Ao Deus que, benigno, com graça e perdão,
+Pecados cobrindo nos dá redenção.`,
 
-    '024': `Vinde louvar ao Senhor com alegria,\nVinde cantar ao nosso Criador;\nEntremos com ações de graças e harmonia,\nNa presença do glorioso Senhor.\n\nLouvai ao Senhor! Cantai ao Senhor!\nVinde adorar ao nosso Criador!\nLouvai ao Senhor! Cantai ao Senhor!\nGlória e louvor ao nosso Salvador!`,
+    '024': `Vinde irmãos louvar a Deus,
+Criador da terra e céus
+Exaltemos o Senhor!
+Infinito é seu amor!
+Glória em honra ao grande Rei;
+Alta santa é sua lei.
+Age com poder real,
+Com grandeza divinal.
+Dia e noite a sua mão
+Desenvolve o tenro grão.
+Com os dons do seu poder
+Nossas vidas faz crescer.`,
 
-    '025': `O Criador de tudo, de todo o universo,\nO Deus que fez os céus e a terra;\nO Criador que é digno de todo louvor,\nA Ele toda glória se encerra.\n\nCriador! Criador! A Ti louvamos!\nCriador! Criador! A Ti servimos!\nCriador! Criador! A Ti adoramos!\nCriador! Criador! Em Ti confiamos!`,
+    '025': `Deus, do infinito o Criador,
+Que deste aos astros seu fulgor,
+Tuas obras te proclamam!
+Ao explorarmos a amplidão,
+Obra sem par da tua mão,
+Extasiados te louvamos!
+Aleluia! Aleluia! Aleluia!
+Ergueu-se o homem para o céu,
+Deixa o planeta em que nasceu;
+Oh, conquista sem limites!
+Como havemos de entender
+Que Deus quisesse aqui viver?
+Deus eterno, entre os homens!
+Aleluia! Aleluia! Aleluia!
+Hoje há problemas entre nós
+Por não ouvirmos tua voz.
+Pai, perdoa as nossas faltas!
+Que nossas vidas em Jesus
+Busquem guarida, paz e luz,
+E teu nome celebremos;
+Aleluia! Aleluia! Aleluia!
+No grande plano divinal,
+Dessa harmonia universal
+Deus com grande amor salvou-nos!
+Ele nos deixa conhecer
+Toda extensão de seu poder
+Revelado no universo!
+Aleluia! Aleluia! Aleluia!`,
 
-    '026': `Grandioso és Tu, ó Senhor meu Deus!\nCom coração cheio de espanto e amor\nContemplo o mundo e a obra de teus dedos,\nO céu, as estrelas, o trovão, o mar.\n\nE quando penso que Deus seu Filho não poupou,\nMas deu por mim, que alegria me invadiu!\nCristo voltará com poder e glória,\nEm triunfo, ao céu, Ele me conduzirá.\n\nE então minha alma entoa: que grande és Tu!\nQue grande és Tu! Que grande és Tu!\nE então minha alma entoa: que grande és Tu!\nQue grande és Tu!`,
+    '026': `Senhor meu Deus, quando eu maravilhado
+Os grandes feitos vejo de tua mão,
+Estrelas, mundos e trovões rolando,
+A proclamar teu nome na amplidão.
+Canta minh'alma, então, a ti Senhor:
+Grandioso és Tu, grandioso és Tu!
+Canta minh'alma, então, a ti Senhor:
+Grandioso és Tu, grandioso és Tu!
+Quando atravesso bosques e florestas,
+Ouvindo, à brisa, pássaros cantar,
+Ou vejo, além, montanhas altaneiras
+O teu poder em glória proclamar.
+Quando percebo que na cruz maldita,
+Por teu amor Jesus morreu por mim,
+E me livrou do jugo do pecado,
+Ali vertendo sangue carmesim.
+Quando afinal em resplendor e glória,
+Jesus abrir as portas da mansão,
+Eu hei de estar de joelhos entre os santos,
+Na mais humilde e vera adoração,
+E então cantar eternamente ali:
+Grandioso és Tu, grandioso és Tu!
+E então cantar eternamente ali:
+Grandioso és Tu, grandioso és Tu!`,
 
-    '027': `Um hino ao Senhor cantemos aqui,\nCom todo o coração louvemos a Ele;\nSua graça e seu amor senti,\nE quero proclamar que grande é Ele.\n\nAo Senhor! Ao Senhor!\nUm hino de louvor cantemos;\nAo Senhor! Ao Senhor!\nSua glória proclamemos!`,
+    '027': `As grutas, as rochas imensas,
+Dos mundos o grande esplendor,
+Proclamam bem alto, constantes
+Um hino ao teu nome, Senhor!
+Nos céus e no mar e na terra,
+Nos bosques, nos prados em flor,
+No fragoso alcantil, na amplitude celeste,
+Um hino ressoa ao Senhor!
+Nos céus, as estrelas brilhantes,
+Dos mares o grande fragor,
+E as brisas entoam, ridentes,
+Um hino ao teu nome, Senhor!
+As aves alegres, na mata,
+Por entre as ramagens em flor,
+Exultam em coro, cantando
+Um hino ao teu nome, Senhor!
+E tu, pecador que vagueias,
+Que fazes ao teu Criador?
+Não achas momento em que cantes
+Um hino de glória ao Senhor!`,
 
-    '028': `Com alegria louvemos ao Rei,\nPrazer ao Senhor dos senhores;\nCanções de louvor oferecemos aqui\nAo Deus que nos deu seus favores.\n\nLouvemos ao Rei! Louvemos ao Rei!\nLouvemos ao Rei da glória!\nLouvemos ao Rei! Louvemos ao Rei!\nLouvemos ao Rei da glória!`,
+    '028': `Tuas obras te coroam
+Como um halo de esplendor!
+Astros, anjos, céus entoam
+Hino eterno a ti Senhor!
+Campos, matas, vales, montes,
+Verde outeiro e verde mar,
+Aves e sonoras fontes
+Formam coro singular!
+Nós, mortais, por ti remidos,
+Deus de glória, Deus de amor,
+Corações aos céus erguidos,
+Celebramos teu louvor!
+Revelaste amor profundo,
+Insondável, sem igual,
+Enviando Cristo ao mundo
+A vencer por nós o mal!
+Fonte és de alegria e vida,
+És do bem o Inspirador;
+Tua graça nos convida
+A viver em mútuo amor.
+Quais alegres peregrinos,
+Sempre em marcha triunfal,
+Cantaremos gratos hinos
+Na jornada até o final!`,
 
-    '029': `Louvor ao Senhor! Aleluia cantemos!\nLouvor ao Senhor! Com fervor servimos!\nLouvor ao Senhor! Sua graça proclamamos!\nLouvor ao Senhor! Em alegria marchamos!\n\nAleluia! Aleluia! Louvor ao Senhor!\nAleluia! Aleluia! Louvor ao Senhor!\nAleluia! Aleluia! Louvor ao Senhor!\nAleluia! Aleluia!`,
+    '029': `Louvai ao Senhor com palmas e canto,
+Exaltai seu nome com alegria.
+Deus de toda graça e poder divino,
+Seu amor não cessa, não tem fim.
+Aleluia! Aleluia!
+Ao Senhor louvemos com fervor!
+Aleluia! Aleluia!
+Glória e honra ao nosso Criador!`,
 
-    '030': `A providência de Deus na criação,\nEm tudo que existe vejo seu amor;\nNo sol e na chuva, na terra e no mar,\nSua graça sustenta todo o criado.\n\nProvidente Deus! Em Ti confiamos!\nProvidente Deus! A Ti louvamos!\nProvidente Deus! Tua mão nos guia!\nProvidente Deus! Tua graça nos envia!`,
+    '030': `Eis que o Senhor em toda terra reina,
+Seu poder eterno não terá fim.
+Da criação à redenção divina,
+Seu amor transborda para mim.
+Providente Deus, que tudo guias,
+Na tua mão repousam os mortais.
+Tua graça enche os nossos dias,
+Tua glória brilha sem iguais.`,
 
     '006': `A Deus, supremo Benfeitor,
 Anjos e homens dêem louvor;
 A Deus o Filho, a Deus o Pai,
 E a Deus Espírito, glória dai. Amém.`,
 
-    '016': `Louvai ao Senhor, ao poderoso Rei da glória;\nLouvai-o, ó alma minha, com fervor e amor!\nVinde todos nós louvar-lhe a imensa glória,\nCantar de sua graça o jubiloso chor.\nLouvai ao Senhor!\n\nLouvai ao Senhor! Tão grande é seu poder e amor!\nCom júbilo e prazer cantemos ao Senhor!\nLouvai ao Senhor, louvai ao Senhor!`,
+    '016': `Louvai a Deus,
+Soberano Senhor do que é feito.
+Louvai-o sim,
+De vossa alma, tesouro perfeito!
+A Deus cantai
+E, com fervor, tributai
+Profundo amor e respeito.
+Louvai a Deus
+Que vos faz prosperar dia a dia;
+E, com amor,
+Vos defende e abençoa a porfia.
+Lembrai também,
+Que o poderoso vos vem
+Fazer feliz companhia.`,
 
-    '026': `Grandioso és Tu, ó Senhor meu Deus!\nCom coração cheio de espanto e amor\nContemplo o mundo e a obra de teus dedos,\nO céu, as estrelas, o trovão, o mar!\n\nE então minha alma entoa: que grande és Tu!\nQue grande és Tu! Que grande és Tu!\nE então minha alma entoa: que grande és Tu!\nQue grande és Tu!`,
+    '026': `Senhor meu Deus, quando eu maravilhado
+Os grandes feitos vejo de tua mão,
+Estrelas, mundos e trovões rolando,
+A proclamar teu nome na amplidão.
+Canta minh'alma, então, a ti Senhor:
+Grandioso és Tu, grandioso és Tu!
+Canta minh'alma, então, a ti Senhor:
+Grandioso és Tu, grandioso és Tu!
+Quando atravesso bosques e florestas,
+Ouvindo, à brisa, pássaros cantar,
+Ou vejo, além, montanhas altaneiras
+O teu poder em glória proclamar.
+Quando percebo que na cruz maldita,
+Por teu amor Jesus morreu por mim,
+E me livrou do jugo do pecado,
+Ali vertendo sangue carmesim.
+Quando afinal em resplendor e glória,
+Jesus abrir as portas da mansão,
+Eu hei de estar de joelhos entre os santos,
+Na mais humilde e vera adoração,
+E então cantar eternamente ali:
+Grandioso és Tu, grandioso és Tu!
+E então cantar eternamente ali:
+Grandioso és Tu, grandioso és Tu!`,
 
-    '028': `Com alegria louvemos ao Rei,\nPrazer ao Senhor dos senhores;\nCanções de louvor oferecemos aqui\nAo Deus que nos deu seus favores.\n\nLouvemos ao Rei! Louvemos ao Rei!\nLouvemos ao Rei da glória!\nLouvemos ao Rei! Louvemos ao Rei!\nLouvemos ao Rei da glória!`,
+    '028': `Tuas obras te coroam
+Como um halo de esplendor!
+Astros, anjos, céus entoam
+Hino eterno a ti Senhor!
+Campos, matas, vales, montes,
+Verde outeiro e verde mar,
+Aves e sonoras fontes
+Formam coro singular!
+Nós, mortais, por ti remidos,
+Deus de glória, Deus de amor,
+Corações aos céus erguidos,
+Celebramos teu louvor!
+Revelaste amor profundo,
+Insondável, sem igual,
+Enviando Cristo ao mundo
+A vencer por nós o mal!
+Fonte és de alegria e vida,
+És do bem o Inspirador;
+Tua graça nos convida
+A viver em mútuo amor.
+Quais alegres peregrinos,
+Sempre em marcha triunfal,
+Cantaremos gratos hinos
+Na jornada até o final!`,
 
     '063': `Conta tuas bênçãos, uma por uma,\nConta o que Deus tem feito por ti;\nConta tuas bênçãos, uma por uma,\nVerás o que Deus tem feito por ti.\n\nConta as bênçãos! Nomeia-as uma por uma!\nConta as bênçãos! Vê o que Deus fez!\nConta as bênçãos! Nomeia-as uma por uma!\nConta as bênçãos! Vê o que Deus fez!`,
 
@@ -1862,9 +2272,25 @@ E a Deus Espírito, glória dai. Amém.`,
           </div>
         </div>`;
     }
+    corpo.style.fontSize = hinoFontSize + 'px';
+    const lbl = document.getElementById('hino-font-label');
+    if (lbl) lbl.textContent = hinoFontSize + 'px';
     corpo.scrollTop = 0;
     document.getElementById('hino-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
+  }
+
+  // ── CONTROLE DE FONTE DOS HINOS ──
+  let hinoFontSize = 19;
+  const FONT_MIN = 14;
+  const FONT_MAX = 32;
+
+  function mudarFonte(delta) {
+    hinoFontSize = Math.min(FONT_MAX, Math.max(FONT_MIN, hinoFontSize + delta));
+    const corpo = document.getElementById('hino-corpo');
+    if (corpo) corpo.style.fontSize = hinoFontSize + 'px';
+    const label = document.getElementById('hino-font-label');
+    if (label) label.textContent = hinoFontSize + 'px';
   }
 
   function fecharModal() {
@@ -1911,8 +2337,15 @@ E a Deus Espírito, glória dai. Amém.`,
 <div class="hino-modal" id="hino-modal" onclick="if(event.target===this)fecharModal()">
   <div class="hino-modal-box">
     <div class="hino-modal-header">
-      <div class="hino-modal-titulo" id="hino-modal-titulo"></div>
-      <button class="hino-modal-fechar" onclick="fecharModal()">✕</button>
+      <div class="hino-header-row1">
+        <div class="hino-modal-titulo" id="hino-modal-titulo"></div>
+        <button class="hino-modal-fechar" onclick="fecharModal()">✕</button>
+      </div>
+      <div class="hino-font-controls">
+        <button class="hino-font-btn" onclick="mudarFonte(-2)">A−</button>
+        <span class="hino-font-label" id="hino-font-label">Tamanho da letra</span>
+        <button class="hino-font-btn" onclick="mudarFonte(2)">A+</button>
+      </div>
     </div>
     <div id="hino-corpo" style="
       flex:1;
