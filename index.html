@@ -836,6 +836,92 @@
     letter-spacing: 0.5px;
   }
   .hino-iframe { flex: 1; border: none; width: 100%; background: var(--creme); }
+
+  /* ── MODAL SANTA CEIA ── */
+  .ceia-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.75);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .ceia-modal-box {
+    background: var(--verde-escuro);
+    border-radius: 20px;
+    padding: 32px 24px 28px;
+    max-width: 390px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    border: 1px solid rgba(232,201,122,0.3);
+  }
+  .ceia-ornamento {
+    font-size: 42px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .ceia-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dourado-claro);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .ceia-subtitulo {
+    font-family: var(--fonte-texto);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(232,201,122,0.6);
+    margin-bottom: 20px;
+  }
+  .ceia-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+    margin: 0 auto 20px;
+    width: 80%;
+  }
+  .ceia-texto {
+    font-family: var(--fonte-texto);
+    font-size: 15px;
+    color: rgba(247,243,235,0.9);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .ceia-versiculo {
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--dourado-claro);
+    line-height: 1.7;
+    border-left: 3px solid var(--dourado);
+    padding-left: 14px;
+    text-align: left;
+    margin: 18px 0;
+  }
+  .ceia-btn {
+    background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+    color: var(--verde-escuro);
+    border: none;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-family: var(--fonte-titulo);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    transition: opacity 0.2s;
+  }
+  .ceia-btn:active { opacity: 0.85; }
+
 </style>
 </head>
 <body>
@@ -2368,6 +2454,30 @@ Na jornada até o final!`,
       <button class="prog-modal-fechar" onclick="fecharProg()">✕</button>
     </div>
     <div class="prog-modal-corpo" id="prog-modal-corpo"></div>
+  </div>
+</div>
+
+<!-- MODAL SANTA CEIA -->
+<div class="ceia-modal" id="ceia-modal">
+  <div class="ceia-modal-box">
+    <span class="ceia-ornamento">🍞🍷</span>
+    <div class="ceia-titulo">Santa Ceia do Senhor</div>
+    <div class="ceia-subtitulo">Hoje é um dia especial</div>
+    <div class="ceia-divider"></div>
+    <p class="ceia-texto">
+      Hoje, em nosso culto dominical às <strong style="color:var(--dourado-claro);">18h</strong>, celebraremos juntos a <strong style="color:var(--dourado-claro);">Santa Ceia do Senhor</strong> — um momento sagrado em que nos reunimos ao redor da mesa que Cristo preparou para os seus.
+    </p>
+    <div class="ceia-versiculo">
+      "Fazei isto em memória de mim."<br>
+      <span style="font-size:12px;font-style:normal;font-weight:600;">Lucas 22:19</span>
+    </div>
+    <p class="ceia-texto">
+      É um tempo de recordar o sacrifício de Cristo, de examinar o coração, de renovar a fé e de comungar com os irmãos em torno do mesmo Senhor.
+    </p>
+    <p class="ceia-texto" style="font-style:italic;font-size:14px;color:var(--dourado-claro);">
+      Você é esperado. Venha adorar com a gente. ✝️
+    </p>
+    <button class="ceia-btn" onclick="fecharCeia()">Até logo, nos vemos no culto!</button>
   </div>
 </div>
 
