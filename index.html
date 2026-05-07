@@ -1767,19 +1767,117 @@
     }
   }
 
+  // Mapa de tradução PT → EN para a API
+  const livrosPT = {
+    'gênesis':'genesis','genesis':'genesis','gn':'genesis',
+    'êxodo':'exodus','exodo':'exodus','ex':'exodus',
+    'levítico':'leviticus','levitico':'leviticus','lv':'leviticus',
+    'números':'numbers','numeros':'numbers','nm':'numbers',
+    'deuteronômio':'deuteronomy','deuteronomio':'deuteronomy','dt':'deuteronomy',
+    'josué':'joshua','josue':'joshua','js':'joshua',
+    'juízes':'judges','juizes':'judges','jz':'judges',
+    'rute':'ruth','rt':'ruth',
+    '1samuel':'1samuel','1sm':'1samuel','i samuel':'1samuel',
+    '2samuel':'2samuel','2sm':'2samuel','ii samuel':'2samuel',
+    '1reis':'1kings','1rs':'1kings','i reis':'1kings',
+    '2reis':'2kings','2rs':'2kings','ii reis':'2kings',
+    '1crônicas':'1chronicles','1cronicas':'1chronicles','1cr':'1chronicles',
+    '2crônicas':'2chronicles','2cronicas':'2chronicles','2cr':'2chronicles',
+    'esdras':'ezra','ed':'ezra',
+    'neemias':'nehemiah','ne':'nehemiah',
+    'ester':'esther','et':'esther',
+    'jó':'job','jo':'job',
+    'salmos':'psalms','sl':'psalms','salmo':'psalms',
+    'provérbios':'proverbs','proverbios':'proverbs','pv':'proverbs',
+    'eclesiastes':'ecclesiastes','ec':'ecclesiastes',
+    'cânticos':'songofsolomon','canticos':'songofsolomon','ct':'songofsolomon',
+    'isaías':'isaiah','isaias':'isaiah','is':'isaiah',
+    'jeremias':'jeremiah','jr':'jeremiah',
+    'lamentações':'lamentations','lamentacoes':'lamentations','lm':'lamentations',
+    'ezequiel':'ezekiel','ez':'ezekiel',
+    'daniel':'daniel','dn':'daniel',
+    'oseias':'hosea','os':'hosea',
+    'joel':'joel','jl':'joel',
+    'amós':'amos','am':'amos',
+    'obadias':'obadiah','ob':'obadiah',
+    'jonas':'jonah','jn':'jonah',
+    'miquéias':'micah','miqueias':'micah','mq':'micah',
+    'naum':'nahum','na':'nahum',
+    'habacuque':'habakkuk','hc':'habakkuk',
+    'sofonias':'zephaniah','sf':'zephaniah',
+    'ageu':'haggai','ag':'haggai',
+    'zacarias':'zechariah','zc':'zechariah',
+    'malaquias':'malachi','ml':'malachi',
+    'mateus':'matthew','mt':'matthew',
+    'marcos':'mark','mc':'mark',
+    'lucas':'luke','lc':'luke',
+    'joão':'john','joao':'john',
+    'atos':'acts','at':'acts',
+    'romanos':'romans','rm':'romans',
+    '1coríntios':'1corinthians','1corintios':'1corinthians','1co':'1corinthians',
+    '2coríntios':'2corinthians','2corintios':'2corinthians','2co':'2corinthians',
+    'gálatas':'galatians','galatas':'galatians','gl':'galatians',
+    'efésios':'ephesians','efesios':'ephesians','ef':'ephesians',
+    'filipenses':'philippians','fp':'philippians',
+    'colossenses':'colossians','cl':'colossians',
+    '1tessalonicenses':'1thessalonians','1ts':'1thessalonians',
+    '2tessalonicenses':'2thessalonians','2ts':'2thessalonians',
+    '1timóteo':'1timothy','1timoteo':'1timothy','1tm':'1timothy',
+    '2timóteo':'2timothy','2timoteo':'2timothy','2tm':'2timothy',
+    'tito':'titus','tt':'titus',
+    'filemom':'philemon','fm':'philemon',
+    'hebreus':'hebrews','hb':'hebrews',
+    'tiago':'james','tg':'james',
+    '1pedro':'1peter','1pe':'1peter',
+    '2pedro':'2peter','2pe':'2peter',
+    '1joão':'1john','1joao':'1john','1jo':'1john',
+    '2joão':'2john','2joao':'2john','2jo':'2john',
+    '3joão':'3john','3joao':'3john','3jo':'3john',
+    'judas':'jude','jd':'jude',
+    'apocalipse':'revelation','ap':'revelation'
+  };
+
+  function traduzirReferencia(ref) {
+    // Normaliza: remove acentos, minúsculas, espaços extras
+    let r = ref.trim();
+    // Separa livro de capítulo:versículo
+    // Ex: "João 3:16" → livro="João", resto="3:16"
+    const match = r.match(/^([1-3]?\s*[a-zA-ZÀ-ú]+\.?)\s*(\d.*)?$/i);
+    if (!match) return ref;
+
+    let livro = match[1].trim().toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '') // remove acentos
+      .replace(/\s+/g,''); // remove espaços internos
+
+    const resto = match[2] ? match[2].trim() : '';
+
+    // Tenta encontrar no mapa
+    const livroEN = livrosPT[livro] || livrosPT[livro.replace('.','')];
+
+    if (!livroEN) return ref; // retorna original se não encontrar
+
+    return resto ? `${livroEN} ${resto}` : livroEN;
+  }
+
   async function buscarVersiculo() {
-    const ref = document.getElementById('biblia-ref-input').value.trim();
-    if (!ref) return;
+    const refOriginal = document.getElementById('biblia-ref-input').value.trim();
+    if (!refOriginal) return;
     const conteudo = document.getElementById('biblia-conteudo');
     conteudo.innerHTML = '<div class="biblia-loading">📖 Buscando...</div>';
 
+    const refEN = traduzirReferencia(refOriginal);
+
     try {
-      const res = await fetch(`https://bible-api.com/${encodeURIComponent(ref)}?translation=almeida`);
+      const res = await fetch(`https://bible-api.com/${encodeURIComponent(refEN)}?translation=almeida`);
       const data = await res.json();
 
       if (data.error) throw new Error(data.error);
 
-      let html = `<div class="biblia-capitulo-titulo">${data.reference || ref}</div>`;
+      // Usar nome PT do livro no título
+      const livro = livrosBiblia.find(l => refEN.toLowerCase().startsWith(l.id));
+      const tituloExibicao = livro ? refEN.replace(l.id, livro.n) : (data.reference || refOriginal);
+
+      let html = `<div class="biblia-capitulo-titulo">${data.reference || refOriginal}</div>`;
       if (data.verses) {
         data.verses.forEach(v => {
           html += `<div class="biblia-versiculo" style="font-size:${bibliaFontSize}px"><sup>${v.verse}</sup>${v.text.trim()}</div>`;
@@ -1790,7 +1888,7 @@
       conteudo.innerHTML = html;
       document.getElementById('biblia-nav-caps').style.display = 'none';
     } catch(e) {
-      conteudo.innerHTML = `<div class="biblia-erro">⚠️ Referência não encontrada.<br><small>Tente: "João 3:16" ou "Salmos 23"</small></div>`;
+      conteudo.innerHTML = `<div class="biblia-erro">⚠️ Referência não encontrada.<br><small>Tente: "Romanos 8:28" ou "Sl 23" ou "Ap 1:1"</small></div>`;
     }
   }
 
