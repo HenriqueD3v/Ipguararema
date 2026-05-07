@@ -840,6 +840,138 @@
   }
   .hino-iframe { flex: 1; border: none; width: 100%; background: var(--creme); }
 
+
+  /* ── BÍBLIA ── */
+  .biblia-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .biblia-select {
+    flex: 1;
+    border: 1.5px solid var(--creme-escuro);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: var(--fonte-texto);
+    color: var(--texto);
+    background: var(--branco);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .biblia-select:focus { border-color: var(--verde-claro); }
+  .biblia-btn-ir {
+    background: var(--verde-escuro);
+    color: var(--dourado-claro);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-family: var(--fonte-titulo);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .biblia-busca {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .biblia-input {
+    flex: 1;
+    border: 1.5px solid var(--creme-escuro);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: var(--fonte-texto);
+    color: var(--texto);
+    background: var(--branco);
+    outline: none;
+  }
+  .biblia-input:focus { border-color: var(--verde-claro); }
+  .biblia-texto {
+    background: var(--branco);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    min-height: 200px;
+  }
+  .biblia-capitulo-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--creme-escuro);
+  }
+  .biblia-versiculo {
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    color: var(--texto);
+    line-height: 1.85;
+    margin-bottom: 8px;
+  }
+  .biblia-versiculo sup {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--verde-claro);
+    margin-right: 3px;
+    vertical-align: super;
+  }
+  .biblia-nav-caps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    gap: 8px;
+  }
+  .biblia-nav-btn {
+    flex: 1;
+    background: var(--creme-escuro);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    cursor: pointer;
+    text-align: center;
+  }
+  .biblia-loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--texto-suave);
+    font-family: var(--fonte-texto);
+    font-size: 15px;
+  }
+  .biblia-erro {
+    text-align: center;
+    padding: 30px;
+    color: #c0392b;
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+  }
+  .biblia-font-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .biblia-font-btn {
+    background: var(--verde-escuro);
+    border: none;
+    color: var(--dourado-claro);
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px 12px;
+    font-family: var(--fonte-titulo);
+    font-size: 14px;
+  }
+
   /* ── MODAL SANTA CEIA ── */
   .ceia-modal {
     display: none;
@@ -962,6 +1094,7 @@
   <button class="nav-tab" onclick="showSection('eventos', this)">Eventos</button>
   <button class="nav-tab" onclick="showSection('oracao', this)">Oração</button>
   <button class="nav-tab" onclick="showSection('hinos', this)">Hinos</button>
+  <button class="nav-tab" onclick="showSection('biblia', this)">Bíblia</button>
 </div>
 
 <!-- ── SEÇÃO: CULTOS ── -->
@@ -1214,6 +1347,56 @@
 </div>
 
 <!-- BOTTOM NAV -->
+
+<!-- ── SEÇÃO: BÍBLIA ── -->
+<div class="section" id="sec-biblia">
+  <div class="section-title">Bíblia Sagrada</div>
+  <div class="section-sub">Almeida Revista e Atualizada</div>
+  <div class="divider"></div>
+
+  <!-- Busca por referência -->
+  <div class="biblia-busca">
+    <input class="biblia-input" id="biblia-ref-input" type="text"
+      placeholder="Ex: João 3:16 ou Salmos 23"
+      onkeydown="if(event.key==='Enter')buscarVersiculo()">
+    <button class="biblia-btn-ir" onclick="buscarVersiculo()">Buscar</button>
+  </div>
+
+  <!-- Navegação por livro/capítulo -->
+  <div class="biblia-nav">
+    <select class="biblia-select" id="biblia-livro" onchange="carregarCapitulos()">
+      <option value="">Selecione o livro...</option>
+    </select>
+    <select class="biblia-select" id="biblia-cap" style="max-width:90px;">
+      <option value="">Cap.</option>
+    </select>
+    <button class="biblia-btn-ir" onclick="lerCapitulo()">Ler</button>
+  </div>
+
+  <!-- Controle de fonte -->
+  <div class="biblia-font-controls">
+    <button class="biblia-font-btn" onclick="mudarFonteBiblia(-1)">A−</button>
+    <button class="biblia-font-btn" onclick="mudarFonteBiblia(1)">A+</button>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="biblia-texto" id="biblia-conteudo">
+    <div style="text-align:center;padding:40px 20px;">
+      <div style="font-size:40px;margin-bottom:12px;">📖</div>
+      <div style="font-family:var(--fonte-titulo);font-size:18px;font-weight:700;color:var(--verde-escuro);margin-bottom:8px;">Palavra de Deus</div>
+      <div style="font-family:var(--fonte-texto);font-size:14px;color:var(--texto-suave);line-height:1.7;">
+        Busque um versículo pelo campo acima<br>ou selecione um livro para começar a ler.
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegação entre capítulos -->
+  <div class="biblia-nav-caps" id="biblia-nav-caps" style="display:none;">
+    <button class="biblia-nav-btn" onclick="navCapitulo(-1)">‹ Anterior</button>
+    <button class="biblia-nav-btn" onclick="navCapitulo(1)">Próximo ›</button>
+  </div>
+</div>
+
 <div class="bottom-nav">
   <button class="bottom-btn active" onclick="showSection('contato',null,this)">
     <span class="icon"><img src="data:image/png;base64,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" style="width:24px;height:24px;object-fit:contain;vertical-align:middle;"></span>
@@ -1302,7 +1485,7 @@
       bottomEl.classList.add('active');
       // sync tab
       const tabs = document.querySelectorAll('.nav-tab');
-      const map = ['contato','cultos','eventos','oracao','hinos'];
+      const map = ['contato','cultos','eventos','oracao','hinos','biblia'];
       tabs.forEach((t,i) => t.classList.toggle('active', map[i]===id));
     }
 
@@ -1473,6 +1656,163 @@
       }
     });
   }
+
+
+  // ── BÍBLIA ARA ──
+  let bibliaFontSize = 16;
+  let bibliaLivroAtual = '';
+  let bibliaCapAtual = 1;
+  let bibliaTotalCaps = 1;
+
+  const livrosBiblia = [
+    // Antigo Testamento
+    {id:'genesis',n:'Gênesis',caps:50},{id:'exodus',n:'Êxodo',caps:40},
+    {id:'leviticus',n:'Levítico',caps:27},{id:'numbers',n:'Números',caps:36},
+    {id:'deuteronomy',n:'Deuteronômio',caps:34},{id:'joshua',n:'Josué',caps:24},
+    {id:'judges',n:'Juízes',caps:21},{id:'ruth',n:'Rute',caps:4},
+    {id:'1samuel',n:'1 Samuel',caps:31},{id:'2samuel',n:'2 Samuel',caps:24},
+    {id:'1kings',n:'1 Reis',caps:22},{id:'2kings',n:'2 Reis',caps:25},
+    {id:'1chronicles',n:'1 Crônicas',caps:29},{id:'2chronicles',n:'2 Crônicas',caps:36},
+    {id:'ezra',n:'Esdras',caps:10},{id:'nehemiah',n:'Neemias',caps:13},
+    {id:'esther',n:'Ester',caps:10},{id:'job',n:'Jó',caps:42},
+    {id:'psalms',n:'Salmos',caps:150},{id:'proverbs',n:'Provérbios',caps:31},
+    {id:'ecclesiastes',n:'Eclesiastes',caps:12},{id:'songofsolomon',n:'Cânticos',caps:8},
+    {id:'isaiah',n:'Isaías',caps:66},{id:'jeremiah',n:'Jeremias',caps:52},
+    {id:'lamentations',n:'Lamentações',caps:5},{id:'ezekiel',n:'Ezequiel',caps:48},
+    {id:'daniel',n:'Daniel',caps:12},{id:'hosea',n:'Oseias',caps:14},
+    {id:'joel',n:'Joel',caps:3},{id:'amos',n:'Amós',caps:9},
+    {id:'obadiah',n:'Obadias',caps:1},{id:'jonah',n:'Jonas',caps:4},
+    {id:'micah',n:'Miquéias',caps:7},{id:'nahum',n:'Naum',caps:3},
+    {id:'habakkuk',n:'Habacuque',caps:3},{id:'zephaniah',n:'Sofonias',caps:3},
+    {id:'haggai',n:'Ageu',caps:2},{id:'zechariah',n:'Zacarias',caps:14},
+    {id:'malachi',n:'Malaquias',caps:4},
+    // Novo Testamento
+    {id:'matthew',n:'Mateus',caps:28},{id:'mark',n:'Marcos',caps:16},
+    {id:'luke',n:'Lucas',caps:24},{id:'john',n:'João',caps:21},
+    {id:'acts',n:'Atos',caps:28},{id:'romans',n:'Romanos',caps:16},
+    {id:'1corinthians',n:'1 Coríntios',caps:16},{id:'2corinthians',n:'2 Coríntios',caps:13},
+    {id:'galatians',n:'Gálatas',caps:6},{id:'ephesians',n:'Efésios',caps:6},
+    {id:'philippians',n:'Filipenses',caps:4},{id:'colossians',n:'Colossenses',caps:4},
+    {id:'1thessalonians',n:'1 Tessalonicenses',caps:5},{id:'2thessalonians',n:'2 Tessalonicenses',caps:3},
+    {id:'1timothy',n:'1 Timóteo',caps:6},{id:'2timothy',n:'2 Timóteo',caps:4},
+    {id:'titus',n:'Tito',caps:3},{id:'philemon',n:'Filemom',caps:1},
+    {id:'hebrews',n:'Hebreus',caps:13},{id:'james',n:'Tiago',caps:5},
+    {id:'1peter',n:'1 Pedro',caps:5},{id:'2peter',n:'2 Pedro',caps:3},
+    {id:'1john',n:'1 João',caps:5},{id:'2john',n:'2 João',caps:1},
+    {id:'3john',n:'3 João',caps:1},{id:'jude',n:'Judas',caps:1},
+    {id:'revelation',n:'Apocalipse',caps:22}
+  ];
+
+  // Popular select de livros
+  function popularLivros() {
+    const sel = document.getElementById('biblia-livro');
+    if (!sel || sel.options.length > 1) return;
+    livrosBiblia.forEach(l => {
+      const opt = document.createElement('option');
+      opt.value = l.id;
+      opt.textContent = l.n;
+      sel.appendChild(opt);
+    });
+  }
+
+  function carregarCapitulos() {
+    const livroId = document.getElementById('biblia-livro').value;
+    const selCap = document.getElementById('biblia-cap');
+    selCap.innerHTML = '<option value="">Cap.</option>';
+    if (!livroId) return;
+    const livro = livrosBiblia.find(l => l.id === livroId);
+    if (!livro) return;
+    for (let i = 1; i <= livro.caps; i++) {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = i;
+      selCap.appendChild(opt);
+    }
+    selCap.value = 1;
+  }
+
+  async function lerCapitulo() {
+    const livroId = document.getElementById('biblia-livro').value;
+    const cap = document.getElementById('biblia-cap').value || 1;
+    if (!livroId) { alert('Selecione um livro!'); return; }
+    const livro = livrosBiblia.find(l => l.id === livroId);
+    bibliaTotalCaps = livro ? livro.caps : 1;
+    bibliaLivroAtual = livroId;
+    bibliaCapAtual = parseInt(cap);
+    await carregarTexto(livroId, bibliaCapAtual);
+  }
+
+  async function carregarTexto(livroId, cap) {
+    const conteudo = document.getElementById('biblia-conteudo');
+    const livro = livrosBiblia.find(l => l.id === livroId);
+    conteudo.innerHTML = '<div class="biblia-loading">📖 Carregando...</div>';
+
+    try {
+      const res = await fetch(`https://bible-api.com/${livroId}+${cap}?translation=almeida`);
+      const data = await res.json();
+
+      if (!data.verses) throw new Error('Sem dados');
+
+      let html = `<div class="biblia-capitulo-titulo">${livro ? livro.n : livroId} ${cap}</div>`;
+      data.verses.forEach(v => {
+        html += `<div class="biblia-versiculo" style="font-size:${bibliaFontSize}px"><sup>${v.verse}</sup>${v.text.trim()}</div>`;
+      });
+      conteudo.innerHTML = html;
+      conteudo.scrollTop = 0;
+
+      // Mostrar navegação
+      document.getElementById('biblia-nav-caps').style.display = 'flex';
+    } catch(e) {
+      conteudo.innerHTML = '<div class="biblia-erro">⚠️ Não foi possível carregar. Verifique sua conexão.</div>';
+    }
+  }
+
+  async function buscarVersiculo() {
+    const ref = document.getElementById('biblia-ref-input').value.trim();
+    if (!ref) return;
+    const conteudo = document.getElementById('biblia-conteudo');
+    conteudo.innerHTML = '<div class="biblia-loading">📖 Buscando...</div>';
+
+    try {
+      const res = await fetch(`https://bible-api.com/${encodeURIComponent(ref)}?translation=almeida`);
+      const data = await res.json();
+
+      if (data.error) throw new Error(data.error);
+
+      let html = `<div class="biblia-capitulo-titulo">${data.reference || ref}</div>`;
+      if (data.verses) {
+        data.verses.forEach(v => {
+          html += `<div class="biblia-versiculo" style="font-size:${bibliaFontSize}px"><sup>${v.verse}</sup>${v.text.trim()}</div>`;
+        });
+      } else if (data.text) {
+        html += `<div class="biblia-versiculo" style="font-size:${bibliaFontSize}px">${data.text.trim()}</div>`;
+      }
+      conteudo.innerHTML = html;
+      document.getElementById('biblia-nav-caps').style.display = 'none';
+    } catch(e) {
+      conteudo.innerHTML = `<div class="biblia-erro">⚠️ Referência não encontrada.<br><small>Tente: "João 3:16" ou "Salmos 23"</small></div>`;
+    }
+  }
+
+  async function navCapitulo(dir) {
+    const novoC = bibliaCapAtual + dir;
+    if (novoC < 1 || novoC > bibliaTotalCaps) return;
+    bibliaCapAtual = novoC;
+    document.getElementById('biblia-cap').value = bibliaCapAtual;
+    await carregarTexto(bibliaLivroAtual, bibliaCapAtual);
+  }
+
+  function mudarFonteBiblia(delta) {
+    bibliaFontSize = Math.min(26, Math.max(13, bibliaFontSize + delta));
+    document.querySelectorAll('.biblia-versiculo').forEach(el => {
+      el.style.fontSize = bibliaFontSize + 'px';
+    });
+  }
+
+  // Inicializar livros ao carregar
+  window.addEventListener('load', () => {
+    popularLivros();
+  });
 
   // ── PROGRAMAÇÕES ──
   const programacoes = {
