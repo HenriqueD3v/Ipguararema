@@ -841,6 +841,202 @@
   .hino-iframe { flex: 1; border: none; width: 100%; background: var(--creme); }
 
 
+
+/* placeholder */
+  .dark-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  .dark-toggle:active { transform: scale(0.85); }
+
+  body.dark-mode {
+    --creme: #1a1a2e;
+    --creme-escuro: #16213e;
+    --branco: #0f3460;
+    --texto: #e0e0e0;
+    --texto-suave: #a0a0b0;
+    --verde-escuro: #0d2137;
+    --verde-medio: #1a4a2e;
+    --verde-claro: #2d6a42;
+    background: #121212;
+  }
+
+  body.dark-mode .header {
+    background: #0d1b2a;
+  }
+
+  body.dark-mode .nav-tabs {
+    background: #1a1a2e;
+    border-bottom-color: #2a2a4e;
+  }
+
+  body.dark-mode .nav-tab {
+    color: #a0a0c0;
+  }
+
+  body.dark-mode .nav-tab.active {
+    color: var(--dourado-claro);
+    border-bottom-color: var(--dourado);
+  }
+
+  body.dark-mode .bottom-nav {
+    background: #1a1a2e;
+    border-top-color: #2a2a4e;
+  }
+
+  body.dark-mode .bottom-btn .label {
+    color: #a0a0c0;
+  }
+
+  body.dark-mode .bottom-btn.active .label {
+    color: var(--dourado-claro);
+  }
+
+  body.dark-mode .card,
+  body.dark-mode .culto-item,
+  body.dark-mode .contato-item,
+  body.dark-mode .hino-item,
+  body.dark-mode .pedido-item,
+  body.dark-mode .oracao-form,
+  body.dark-mode .biblia-texto,
+  body.dark-mode .devocional-card {
+    background: #1e1e3a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  body.dark-mode .culto-dia {
+    background: #0d2137;
+  }
+
+  body.dark-mode .form-input,
+  body.dark-mode .biblia-select,
+  body.dark-mode .biblia-input {
+    background: #1e1e3a;
+    border-color: #2a2a4e;
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .radio-btn {
+    background: #1e1e3a;
+    border-color: #2a2a4e;
+    color: #a0a0c0;
+  }
+
+  body.dark-mode .versiculo-banner {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a3a2a 60%, #1a4a2e 100%);
+  }
+
+  body.dark-mode .hino-modal-box,
+  body.dark-mode .prog-modal-box {
+    background: #1a1a2e;
+  }
+
+  body.dark-mode .hino-corpo,
+  body.dark-mode .prog-modal-corpo {
+    background: #1a1a2e;
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .biblia-capitulo-titulo {
+    color: var(--dourado-claro);
+    border-bottom-color: #2a2a4e;
+  }
+
+  body.dark-mode .biblia-versiculo {
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .biblia-nav-btn {
+    background: #1e1e3a;
+    color: var(--dourado-claro);
+  }
+
+  body.dark-mode [style*="background:var(--branco)"],
+  body.dark-mode [style*="background: var(--branco)"] {
+    background: #1e1e3a !important;
+  }
+
+  body.dark-mode [style*="color:var(--texto-suave)"],
+  body.dark-mode [style*="color: var(--texto-suave)"] {
+    color: #a0a0b0 !important;
+  }
+
+  body.dark-mode [style*="color:var(--verde-escuro)"],
+  body.dark-mode [style*="color: var(--verde-escuro)"] {
+    color: var(--dourado-claro) !important;
+  }
+
+  body.dark-mode .ceia-modal-box {
+    background: #0d1b2a;
+  }
+
+  body.dark-mode .section-title {
+    color: var(--dourado-claro);
+  }
+
+
+  /* ── MODO ESCURO ── */
+  .dark-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    transition: background 0.2s;
+    line-height: 1;
+  }
+  .dark-toggle:active { background: rgba(255,255,255,0.15); }
+
+  body.dark {
+    --creme: #1a1a2e;
+    --creme-escuro: #16213e;
+    --branco: #0f3460;
+    --texto: #e0e0e0;
+    --texto-suave: #a0a0b0;
+    background: #1a1a2e;
+  }
+
+  body.dark .header { background: #0d2137; }
+  body.dark .nav-tabs { background: #0f3460; border-bottom-color: #1a4a6e; }
+  body.dark .nav-tab { color: #a0a0b0; }
+  body.dark .nav-tab.active { color: #e8c97a; border-bottom-color: #e8c97a; }
+  body.dark .bottom-nav { background: #0f3460; border-top-color: #1a4a6e; }
+  body.dark .bottom-btn .label { color: #a0a0b0; }
+  body.dark .bottom-btn.active .label { color: #e8c97a; }
+  body.dark .card { background: #0f3460; }
+  body.dark .culto-item { background: #0f3460; }
+  body.dark .hino-item { background: #0f3460; }
+  body.dark .hino-item:active { background: #1a4a6e; }
+  body.dark .contato-item { background: #0f3460; }
+  body.dark .oracao-form { background: #0f3460; }
+  body.dark .form-input { background: #1a1a2e; border-color: #1a4a6e; color: #e0e0e0; }
+  body.dark .devocional-body { background: #0f3460; }
+  body.dark .pedido-item { background: #0f3460; }
+  body.dark .biblia-texto { background: #0f3460; }
+  body.dark .biblia-select { background: #0f3460; color: #e0e0e0; border-color: #1a4a6e; }
+  body.dark .biblia-input { background: #0f3460; color: #e0e0e0; border-color: #1a4a6e; }
+  body.dark .biblia-nav-btn { background: #1a4a6e; color: #e8c97a; }
+  body.dark .biblia-capitulo-titulo { color: #e8c97a; border-bottom-color: #1a4a6e; }
+  body.dark .biblia-versiculo { color: #e0e0e0; }
+  body.dark .section-title { color: #e8c97a; }
+  body.dark .culto-nome { color: #e8c97a; }
+  body.dark .card-titulo { color: #e8c97a; }
+  body.dark .contato-valor { color: #e8c97a; }
+  body.dark .hino-titulo { color: #e0e0e0; }
+  body.dark .prog-modal-corpo { background: #1a1a2e; }
+  body.dark .prog-texto { color: #a0a0b0; }
+  body.dark .prog-subtitulo { color: #e8c97a; }
+  body.dark .hino-modal-corpo,
+  body.dark #hino-corpo { background: #1a1a2e; color: #e0e0e0; }
+  body.dark .radio-btn { background: #1a1a2e; border-color: #1a4a6e; color: #a0a0b0; }
+  body.dark .hino-categoria { color: #e8c97a; }
+
   /* ── BÍBLIA ── */
   .biblia-nav {
     display: flex;
@@ -1071,6 +1267,8 @@
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:4px;">
+      <button class="dark-toggle" onclick="toggleDark()" id="dark-btn" title="Modo escuro">🌙</button>
+      <button class="dark-toggle" id="dark-toggle-btn" onclick="toggleDarkMode()" title="Modo escuro">🌙</button>
       <button class="header-bell" onclick="irParaEventos()" style="background:none;border:none;cursor:pointer;">
         <span class="bell-icon">🔔</span>
         <div class="bell-badge">2</div>
@@ -1658,6 +1856,28 @@
   }
 
 
+
+  // ── MODO ESCURO ──
+  function toggleDark() {
+    const body = document.body;
+    const btn = document.getElementById('dark-btn');
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    btn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', isDark ? '1' : '0');
+  }
+
+  // Restaurar preferência ao carregar
+  (function() {
+    if (localStorage.getItem('darkMode') === '1') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('dark-btn');
+        if (btn) btn.textContent = '☀️';
+      });
+    }
+  })();
+
   // ── BÍBLIA ARA ──
   let bibliaFontSize = 16;
   let bibliaLivroAtual = '';
@@ -1910,7 +2130,27 @@
   // Inicializar livros ao carregar
   window.addEventListener('load', () => {
     popularLivros();
+    aplicarModoSalvo();
   });
+
+
+  // ── MODO ESCURO ──
+  function toggleDarkMode() {
+    const body = document.body;
+    const btn = document.getElementById('dark-toggle-btn');
+    const isDark = body.classList.toggle('dark-mode');
+    btn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', isDark ? '1' : '0');
+  }
+
+  function aplicarModoSalvo() {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === '1') {
+      document.body.classList.add('dark-mode');
+      const btn = document.getElementById('dark-toggle-btn');
+      if (btn) btn.textContent = '☀️';
+    }
+  }
 
   // ── PROGRAMAÇÕES ──
   const programacoes = {
